@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم — محمد الفيلالي</title>
+    
+    <!-- التنسيقات الرئيسية وتنسيقات لوحة التحكم -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- =========================================
+         شاشة تسجيل الدخول للمدير
+    ========================================== -->
+    <div id="login-screen" class="login-container">
+        <form id="login-form" class="admin-card login-card" novalidate>
+            <h2>تسجيل الدخول للوحة التحكم</h2>
+            
+            <div class="form-field">
+                <label for="admin-email">البريد الإلكتروني للمدير</label>
+                <input 
+                    type="email" 
+                    id="admin-email" 
+                    required 
+                    placeholder="example@email.com"
+                    autocomplete="username"
+                >
+            </div>
+
+            <div class="form-field">
+                <label for="admin-password">كلمة المرور</label>
+                <input 
+                    type="password" 
+                    id="admin-password" 
+                    required 
+                    placeholder="••••••••"
+                    autocomplete="current-password"
+                >
+            </div>
+
+            <button type="submit" class="button button-primary submit-btn">
+                <span class="btn-text">تسجيل الدخول</span>
+                <span class="btn-loading" hidden>جارٍ التحقق...</span>
+            </button>
+
+            <div id="login-status" class="form-status" role="status" aria-live="polite"></div>
+        </form>
+    </div>
+
+
+    <!-- =========================================
+         لوحة التحكم الرئيسية (تظهر بعد الدخول)
+    ========================================== -->
+    <div id="dashboard-screen" class="dashboard-container" hidden>
+        
+        <!-- الهيدر الرئيسي للوحة -->
+        <header class="admin-header">
+            <div class="container header-inner">
+                <div class="brand">
+                    <span class="brand-mark">MF</span>
+                    <span class="brand-text">لوحة إدارة الموقع</span>
+                </div>
+
+                <button id="logout-btn" class="button button-secondary">
+                    تسجيل الخروج
+                </button>
+            </div>
+        </header>
+
+        <main class="container admin-main">
+            
+            <!-- أزرار التنقل بين الأقسام -->
+            <nav class="admin-tabs" aria-label="أقسام لوحة التحكم">
+                <button class="tab-btn active" data-tab="messages-section">
+                    رسائل العملاء (<span id="messages-count">0</span>)
+                </button>
+                <button class="tab-btn" data-tab="projects-section">
+                    إدارة المشاريع
+                </button>
+            </nav>
+
+            <!-- =========================================
+                 قسم 1: عرض رسائل العملاء
+            ========================================== -->
+            <section id="messages-section" class="tab-content active">
+                <div class="section-heading">
+                    <h2>الطلبات والرسائل الواردة</h2>
+                    <p>جميع الطلبات المرسلة من استمارة التواصل في صفحة المستخدمين.</p>
+                </div>
+
+                <div id="messages-list" class="messages-grid">
+                    <div class="loading-box">جارٍ تحميل الرسائل...</div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 قسم 2: إضافة وتعديل المشاريع
+            ========================================== -->
+            <section id="projects-section" class="tab-content">
+                <div class="section-heading">
+                    <h2>إدارة المشاريع والأعمال</h2>
+                    <p>أي مشروع تضيفه أو تعدله هنا سيظهر تلقائيًا للزوار في الواجهة الرئيسية.</p>
+                </div>
+
+                <!-- نموذج إضافة/تعديل مشروع -->
+                <form id="project-form" class="admin-card project-form-card" novalidate>
+                    <h3 id="form-title">إضافة مشروع جديد</h3>
+                    
+                    <!-- المعرف المخفي للتعديل -->
+                    <input type="hidden" id="project-id">
+
+                    <div class="form-field">
+                        <label for="project-title">عنوان المشروع</label>
+                        <input 
+                            type="text" 
+                            id="project-title" 
+                            required 
+                            placeholder="مثال: متجر إلكتروني لمعدات الرياضة"
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="project-description">وصف المشروع</label>
+                        <textarea 
+                            id="project-description" 
+                            rows="4" 
+                            required 
+                            placeholder="شرح مختصر عن تفاصيل المشروع..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="project-url">رابط المشروع (اختياري)</label>
+                        <input 
+                            type="url" 
+                            id="project-url" 
+                            placeholder="https://example.com"
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label>صورة المشروع</label>
+                        <div class="image-input-group">
+                            <input 
+                                type="file" 
+                                id="project-image-file" 
+                                accept="image/*"
+                            >
+                            <span class="divider-text">أو استخدم رابط خارجي:</span>
+                            <input 
+                                type="url" 
+                                id="project-image-url" 
+                                placeholder="https://example.com/image.jpg"
+                            >
+                        </div>
+                        <small>إذا اخترت صورة من جهازك سيتم رفعها تلقائيًا إلى Google Drive.</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="button button-primary" id="save-project-btn">
+                            <span class="btn-text">حفظ المشروع</span>
+                            <span class="btn-loading" hidden>جارٍ الحفظ...</span>
+                        </button>
+
+                        <button type="button" class="button button-secondary" id="cancel-edit-btn" hidden>
+                            إلغاء التعديل
+                        </button>
+                    </div>
+
+                    <div id="project-status" class="form-status" role="status"></div>
+                </form>
+
+                <!-- قائمة المشاريع الحالية -->
+                <div class="admin-projects-wrapper">
+                    <h3>المشاريع المضافة حاليًا</h3>
+                    <div id="admin-projects-list" class="projects-grid">
+                        <div class="loading-box">جارٍ تحميل المشاريع...</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- كود التحكم الخارجي -->
+    <script src="js/admin.js" defer></script>
+</body>
+</html>
