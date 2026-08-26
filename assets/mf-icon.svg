@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">MF</title>
+  <desc id="desc">Monogram MF for Mohamed Filali</desc>
+  <rect width="64" height="64" rx="15" fill="#0d1017"/>
+  <rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="rgba(255,255,255,.14)"/>
+  <path d="M16 43V21h7l9 11 9-11h7v22h-7V31l-6 7h-6l-6-7v12h-7Z" fill="#f4f7fb"/>
+  <path d="M45 21h4v22h-7V28l3-7Z" fill="#aab2c0"/>
+</svg>
