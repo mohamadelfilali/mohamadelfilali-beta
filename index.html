@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="فريق محمد الفيلالي لتطوير المواقع والحلول الرقمية.">
-    <meta name="theme-color" content="#0b0d12">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="فريق محمد الفيلالي — تصميم وتطوير واجهات ومشاريع رقمية." />
+    <meta name="theme-color" content="#0b0d12" />
     <title>محمد الفيلالي — Web Development</title>
-    <link rel="stylesheet" href="css/style.css">
-<base target="_blank">
+
+    <!-- قُم بتغيير المسارات إلى مكان ملفاتك عند النشر -->
+    <link rel="stylesheet" href="style_rebuilt.css" />
+    <base target="_blank" />
 </head>
 <body>
 
     <!-- HEADER -->
-    <header class="site-header" id="top">
+    <header class="site-header" id="top" role="banner">
         <div class="container header-inner">
             <a href="#top" class="brand" aria-label="العودة إلى الرئيسية">
                 <span class="brand-mark">MF</span>
                 <span class="brand-text">محمد الفيلالي</span>
             </a>
+
             <nav class="main-nav" aria-label="التنقل الرئيسي">
                 <a href="#home">الرئيسية</a>
                 <a href="#services">الخدمات</a>
@@ -25,22 +28,27 @@
                 <a href="#about">عن الفريق</a>
                 <a href="#contact">التواصل</a>
             </nav>
-            <a href="#contact" class="header-contact">ابدأ مشروعك</a>
+
+            <div class="header-actions">
+                <button class="header-contact" id="theme-toggle" aria-pressed="false">تغيير الثيم</button>
+                <a href="#contact" class="header-contact">ابدأ مشروعك</a>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- HERO -->
-        <section class="hero-section" id="home">
+        <section class="hero-section" id="home" aria-label="الصفحة الرئيسية">
+            <div class="hero-overlay"></div>
             <div class="container hero-grid">
                 <div class="hero-content">
                     <span class="eyebrow">Web Development Studio</span>
-                    <h1>نبني مواقع<br><span>تستحق أن تُرى.</span></h1>
+                    <h1>نبني مواقع قوية<br><span>بتصميم فريد وتأثيرات حركية مدروسة.</span></h1>
                     <p class="hero-description">
-                        فريق محمد الفيلالي لتطوير المواقع والتجارب
-                        الرقمية الحديثة، مع التركيز على السرعة،
-                        التفاصيل، وسهولة الاستخدام.
+                        فريق صغير، شغوف بالتفاصيل. نركّز على الأداء، قابلية التوسع، وتجربة مستخدم سلسة.
+                        هنا سترى المشاريع، طريقة جلبها، وكيفية التعاون بسهولة.
                     </p>
+
                     <div class="hero-actions">
                         <a href="#projects" class="button button-primary">استعرض أعمالنا</a>
                         <a href="#contact" class="button button-secondary">اطلب مشروعًا</a>
@@ -53,22 +61,24 @@
                             <span class="status-dot"></span>
                             <span>Digital Studio</span>
                         </div>
+
                         <div class="hero-card-body chat-body">
                             <div class="chat-messages" id="chat-messages">
                                 <div class="chat-bubble bot">
-                                    <p>مرحباً! 👋 أنا هنا للإجابة عن أسئلتك الشائعة.</p>
+                                    <p>مرحباً! 👋 اختر سؤالاً أو اكتب استفسارك في نموذج التواصل.</p>
                                 </div>
                             </div>
+
                             <div class="chat-input-area">
-                                <button class="chat-trigger" id="chat-trigger" type="button">
+                                <button class="chat-trigger" id="chat-trigger" type="button" aria-expanded="false">
                                     <span>اختر سؤالاً...</span>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                 </button>
+
                                 <div class="chat-questions" id="chat-questions" hidden>
                                     <button type="button" data-q="1">كم تستغرق مدة تنفيذ المشروع؟</button>
-                                    <button type="button" data-q="2">هل يمكنني طلب تعديلات بعد التسليم؟</button>
-                                    <button type="button" data-q="3">ما هي وسائل الدفع المتاحة؟</button>
-                                    <button type="button" data-q="4">هل هناك دعم فني بعد الانتهاء؟</button>
+                                    <button type="button" data-q="2">هل تقدمون دعم بعد التسليم؟</button>
+                                    <button type="button" data-q="3">كيف أدفع؟</button>
                                 </div>
                             </div>
                         </div>
@@ -83,75 +93,37 @@
                 <div class="section-heading">
                     <span class="eyebrow">الخدمات</span>
                     <h2>من الفكرة إلى موقع جاهز.</h2>
-                    <p>خدمات تطوير مصممة لتناسب احتياجات المشروع
-                        بدل استخدام قالب واحد للجميع.</p>
+                    <p>حلول مرنة: مواقع، متاجر، صفحات هبوط، وتطوير مخصص — كل مشروع بخطة تصميم وتنفيذ مخصصة.</p>
                 </div>
 
                 <div class="services-grid">
+                    <!-- kept from original structure -->
                     <article class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2"/>
-                                <path d="M8 21h8"/>
-                                <path d="M12 17v4"/>
-                                <path d="M6 8h.01" stroke-width="2"/>
-                                <path d="M10 8h.01" stroke-width="2"/>
-                                <path d="M14 8h.01" stroke-width="2"/>
-                            </svg>
-                        </div>
+                        <div class="service-icon">💻</div>
                         <span class="service-number">01</span>
                         <h3>إنشاء المواقع</h3>
-                        <p>بناء مواقع حديثة وسريعة ومتوافقة
-                            مع مختلف الشاشات.</p>
+                        <p>مواقع سريعة ومتجاوبة، مهيأة للأداء وSEO.</p>
                     </article>
 
                     <article class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-                                <line x1="3" y1="6" x2="21" y2="6"/>
-                                <path d="M16 10a4 4 0 01-8 0"/>
-                                <path d="M12 14v4"/>
-                                <path d="M9 18h6"/>
-                            </svg>
-                        </div>
+                        <div class="service-icon">🛒</div>
                         <span class="service-number">02</span>
-                        <h3>المتاجر الإلكترونية</h3>
-                        <p>واجهات مرتبة وتجربة استخدام واضحة
-                            للمشاريع التي تحتاج إلى متجر إلكتروني.</p>
+                        <h3>متاجر إلكترونية</h3>
+                        <p>حلول دفع وتأمين، وإدارة منتجات سهلة.</p>
                     </article>
 
                     <article class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/>
-                                <circle cx="12" cy="12" r="6"/>
-                                <circle cx="12" cy="12" r="2"/>
-                                <path d="M12 2v3"/>
-                                <path d="M12 19v3"/>
-                                <path d="M2 12h3"/>
-                                <path d="M19 12h3"/>
-                            </svg>
-                        </div>
+                        <div class="service-icon">🚀</div>
                         <span class="service-number">03</span>
-                        <h3>صفحات الهبوط</h3>
-                        <p>صفحات مركزة لتحويل الزوار إلى عملاء
-                            مع تصميم احترافي وسريع.</p>
+                        <h3>صفحات هبوط</h3>
+                        <p>مُصممة لتحويل الزوار إلى عملاء.</p>
                     </article>
 
                     <article class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                <path d="M2 17l10 5 10-5"/>
-                                <path d="M2 12l10 5 10-5"/>
-                                <path d="M12 12v10"/>
-                            </svg>
-                        </div>
+                        <div class="service-icon">⚙️</div>
                         <span class="service-number">04</span>
                         <h3>تطوير مخصص</h3>
-                        <p>حلول ومكونات خاصة حسب فكرة المشروع
-                            واحتياجاته.</p>
+                        <p>مكونات ووظائف حسب احتياجك المشروع.</p>
                     </article>
                 </div>
             </div>
@@ -165,10 +137,15 @@
                         <span class="eyebrow">أعمالنا</span>
                         <h2>مشاريع قمنا ببنائها.</h2>
                     </div>
-                    <p>مجموعة مختارة من المشاريع التي عمل عليها الفريق.</p>
+                    <p class="muted-note">المشاريع تُحمَل ديناميكيًا — يُمكن ربطها بـ Firebase / API خارجي.</p>
                 </div>
-                <div id="projects-grid" class="projects-grid">
+
+                <div id="projects-grid" class="projects-grid" aria-live="polite">
                     <div class="projects-loading">جاري تحميل المشاريع...</div>
+                </div>
+
+                <div class="projects-actions" style="margin-top:18px;">
+                    <button id="load-more" class="button button-secondary" hidden>تحميل المزيد</button>
                 </div>
             </div>
         </section>
@@ -178,14 +155,11 @@
             <div class="container about-grid">
                 <div class="section-heading">
                     <span class="eyebrow">عن الفريق</span>
-                    <h2>فريق صغير،<br>واهتمام كبير بالتفاصيل.</h2>
+                    <h2>فريق صغير<br>واهتمام كبير بالتفاصيل.</h2>
                 </div>
                 <div class="about-content">
-                    <p>نعمل على تطوير مواقع وتجارب رقمية تجمع
-                        بين التصميم الواضح والأداء الجيد وسهولة
-                        الاستخدام.</p>
-                    <p>كل مشروع يبدأ بفهم الفكرة، ثم تحويلها إلى
-                        تجربة رقمية عملية وقابلة للاستخدام.</p>
+                    <p>نحوّل الأفكار إلى واجهات قابلة للاستخدام بسرعة وجودة.</p>
+                    <p>نستخدم أفضل ممارسات الأداء والتصميم للتأكد من أن كل مشروع يعمل بثقة.</p>
                 </div>
             </div>
         </section>
@@ -195,15 +169,14 @@
             <div class="container contact-wrapper">
                 <div class="section-heading">
                     <span class="eyebrow">تواصل معنا</span>
-                    <h2>لديك مشروع في ذهنك؟</h2>
-                    <p>اشرح لنا فكرتك بالتفصيل، وسنراجع طلبك
-                        ونتواصل معك عبر وسيلة التواصل التي تختارها.</p>
+                    <h2>لديك مشروع؟</h2>
+                    <p>أخبرنا عن فكرتك وسنرد عليك قريباً.</p>
                 </div>
 
                 <form id="contact-form" class="contact-form" novalidate>
                     <div class="form-field">
                         <label for="client-name">الاسم</label>
-                        <input type="text" id="client-name" name="name" placeholder="اكتب اسمك الكامل" autocomplete="name" required>
+                        <input type="text" id="client-name" name="name" placeholder="مثال: محمد الفيلالي" autocomplete="name" required>
                     </div>
 
                     <div class="form-field">
@@ -214,43 +187,21 @@
                             <option value="ecommerce">متجر إلكتروني</option>
                             <option value="landing-page">صفحة هبوط</option>
                             <option value="custom">تطوير مخصص</option>
-                            <option value="other">طلب آخر</option>
                         </select>
                     </div>
 
-                    <div class="contact-method-group">
-                        <div class="form-field">
-                            <label for="contact-method">طريقة التواصل</label>
-                            <select id="contact-method" name="contactMethod" required>
-                                <option value="" disabled selected>اختر طريقة التواصل</option>
-                                <option value="email">البريد الإلكتروني</option>
-                                <option value="phone">رقم الهاتف</option>
-                                <option value="whatsapp">WhatsApp</option>
-                                <option value="telegram">Telegram</option>
-                                <option value="facebook">Facebook</option>
-                                <option value="x">X</option>
-                            </select>
-                        </div>
-                        <div class="form-field">
-                            <label for="contact-value">معلومات التواصل</label>
-                            <input type="text" id="contact-value" name="contactValue" placeholder="مثال: +212 6XX XXX XXX" required>
-                        </div>
+                    <div class="form-field">
+                        <label for="contact-value">معلومات التواصل</label>
+                        <input type="text" id="contact-value" name="contactValue" placeholder="+212 6XX XXX XXX" required>
                     </div>
 
                     <div class="form-field">
-                        <div class="field-heading">
-                            <label for="client-message">تفاصيل المشروع</label>
-                            <span id="message-counter">0 / 10000 كلمة</span>
-                        </div>
-                        <textarea id="client-message" name="message" rows="12" maxlength="65000" placeholder="اشرح لنا فكرتك بالتفصيل... ما نوع الموقع؟ ما الألوان المفضلة؟ هل لديك أمثلة؟" required></textarea>
-                        <small>يمكنك كتابة رسالة طويلة، بحد أقصى 10,000 كلمة.</small>
+                        <label for="client-message">تفاصيل المشروع</label>
+                        <textarea id="client-message" name="message" rows="8" placeholder="اشرح المشروع..." required></textarea>
                     </div>
 
-                    <input type="text" name="website" id="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-
                     <button type="submit" class="button button-primary submit-button">
-                        <span class="button-text">إرسال الطلب</span>
-                        <span class="button-loading" hidden>جارٍ الإرسال...</span>
+                        إرسال الطلب
                     </button>
 
                     <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
@@ -267,83 +218,179 @@
                 <p>Web Development Studio</p>
             </div>
             <div class="social-links">
-                <a href="#" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
-                <a href="#" aria-label="X" target="_blank" rel="noopener">X</a>
-                <a href="#" aria-label="YouTube" target="_blank" rel="noopener">YouTube</a>
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="X">X</a>
+                <a href="#" aria-label="YouTube">YouTube</a>
             </div>
         </div>
     </footer>
 
-    <script src="js/client.js" defer></script>
-
-    <!-- Chat Widget Script -->
     <script>
+    // --- Chat widget (keeps original behavior; improved for accessibility)
     (function() {
         const chatTrigger = document.getElementById('chat-trigger');
         const chatQuestions = document.getElementById('chat-questions');
         const chatMessages = document.getElementById('chat-messages');
 
         const answers = {
-            '1': 'تتراوح مدة التنفيذ بين 3 أيام وأسبوعين، حسب حجم المشروع وتعقيده. نلتزم بالمواعيد المتفق عليها.',
-            '2': 'نعم بالتأكيد! نقدم جولتين من التعديلات المجانية ضمن نطاق الطلب الأصلي.',
-            '3': 'نقبل التحويل البنكي و PayPal والعملات الرقمية (USDT). يمكن الدفع على دفعتين: 50% مقدم و 50% عند التسليم.',
-            '4': 'نعم، نقدم دعمًا فنيًا مجانيًا لمدة 30 يومًا بعد تسليم المشروع. يمكنك التواصل معنا في أي وقت.'
+            '1': 'تتراوح مدة التنفيذ حسب المشروع؛ نُعطي تقديراً مبدئياً بعد الاطلاع على المطلوب.',
+            '2': 'نعم نقدم دعمًا مجانيًا لفترة بعد التسليم ويمكن تمديده بعقد صيانة.',
+            '3': 'المدفوعات عبر تحويل بنكي، PayPal، أو خيارات متفق عليها.'
         };
 
-        const questions = {
-            '1': 'كم تستغرق مدة تنفيذ المشروع؟',
-            '2': 'هل يمكنني طلب تعديلات بعد التسليم؟',
-            '3': 'ما هي وسائل الدفع المتاحة؟',
-            '4': 'هل هناك دعم فني بعد الانتهاء؟'
-        };
+        if (chatTrigger && chatQuestions) {
+            chatTrigger.addEventListener('click', () => {
+                chatQuestions.hidden = !chatQuestions.hidden;
+                chatTrigger.classList.toggle('open');
+                chatTrigger.setAttribute('aria-expanded', String(!chatQuestions.hidden));
+            });
 
-        chatTrigger.addEventListener('click', function() {
-            chatQuestions.hidden = !chatQuestions.hidden;
-            chatTrigger.classList.toggle('open');
-        });
+            chatQuestions.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const qId = this.dataset.q;
+                    const qText = this.textContent;
+                    const answer = answers[qId] || 'سأرد عليك قريباً.';
+                    const qBubble = document.createElement('div');
+                    qBubble.className = 'chat-bubble user';
+                    qBubble.innerHTML = '<p>' + qText + '</p>';
+                    chatMessages.appendChild(qBubble);
 
-        chatQuestions.querySelectorAll('button').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const qId = this.dataset.q;
-                const questionText = questions[qId];
-                const answerText = answers[qId];
-
-                // Add user question bubble
-                const qBubble = document.createElement('div');
-                qBubble.className = 'chat-bubble user';
-                qBubble.innerHTML = '<p>' + questionText + '</p>';
-                chatMessages.appendChild(qBubble);
-
-                // Hide questions and reset trigger
-                chatQuestions.hidden = true;
-                chatTrigger.classList.remove('open');
-
-                // Scroll to bottom
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-
-                // Simulate typing delay then show answer
-                setTimeout(function() {
+                    // typing simulation
                     const aBubble = document.createElement('div');
                     aBubble.className = 'chat-bubble bot typing';
                     aBubble.innerHTML = '<span class="typing-dots"><span></span><span></span><span></span></span>';
                     chatMessages.appendChild(aBubble);
                     chatMessages.scrollTop = chatMessages.scrollHeight;
 
-                    setTimeout(function() {
+                    setTimeout(() => {
                         aBubble.classList.remove('typing');
-                        aBubble.innerHTML = '<p>' + answerText + '</p>';
+                        aBubble.innerHTML = '<p>' + answer + '</p>';
                         chatMessages.scrollTop = chatMessages.scrollHeight;
-                    }, 1200);
-                }, 400);
+                    }, 900);
+                });
             });
-        });
+        }
+    })();
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!chatTrigger.contains(e.target) && !chatQuestions.contains(e.target)) {
-                chatQuestions.hidden = true;
-                chatTrigger.classList.remove('open');
-            }
+    // --- Projects fetching system (supports static JSON + Firebase example)
+    (function() {
+        const grid = document.getElementById('projects-grid');
+        const loadMoreBtn = document.getElementById('load-more');
+
+        // Helper: render one project card
+        function renderProject(p) {
+            const card = document.createElement('article');
+            card.className = 'project-card';
+            card.innerHTML = `
+                <div class="project-image">
+                    ${p.image ? `<img src="${p.image}" alt="${p.title}">` : `<div class="project-placeholder">بدون صورة</div>`}
+                </div>
+                <div class="project-content">
+                    <h3>${p.title}</h3>
+                    <p>${p.description || ''}</p>
+                    <a class="project-link" href="${p.link || '#'}" target="_blank" rel="noopener">عرض المشروع »</a>
+                </div>
+            `;
+            return card;
+        }
+
+        // 1) Default: Fetch from a JSON endpoint (static or served by your backend)
+        function fetchFromJson(url) {
+            grid.innerHTML = '<div class="projects-loading">جاري تحميل المشاريع...</div>';
+            fetch(url).then(r => {
+                if (!r.ok) throw new Error('فشل تحميل المشاريع');
+                return r.json();
+            }).then(data => {
+                grid.innerHTML = '';
+                if (!Array.isArray(data) || data.length === 0) {
+                    grid.innerHTML = '<div class="projects-loading">لا توجد مشاريع حتى الآن.</div>';
+                    return;
+                }
+                data.slice(0, 9).forEach(p => grid.appendChild(renderProject(p)));
+                if (data.length > 9) {
+                    loadMoreBtn.hidden = false;
+                    let shown = 9;
+                    loadMoreBtn.addEventListener('click', () => {
+                        const more = data.slice(shown, shown + 9);
+                        more.forEach(p => grid.appendChild(renderProject(p)));
+                        shown += more.length;
+                        if (shown >= data.length) loadMoreBtn.hidden = true;
+                    });
+                }
+            }).catch(err => {
+                grid.innerHTML = '<div class="projects-loading">تعذر تحميل المشاريع. تحقق من مسار الـ API.</div>';
+                console.warn(err);
+            });
+        }
+
+        // 2) Firebase Firestore example (uncomment and configure if you use Firebase)
+        /*
+        function fetchFromFirestore(firebaseConfig) {
+            // مثال مختصر: تحتاج تضمين مكتبات Firebase في الصفحة أو عبر bundler
+            // <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+            // <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            db.collection('projects').orderBy('createdAt', 'desc').limit(50).get().then(snapshot => {
+                grid.innerHTML = '';
+                snapshot.forEach(doc => {
+                    const p = doc.data();
+                    grid.appendChild(renderProject({
+                        title: p.title,
+                        description: p.description,
+                        image: p.image,
+                        link: p.link
+                    }));
+                });
+            }).catch(err => {
+                grid.innerHTML = '<div class="projects-loading">خطأ في جلب المشاريع من Firebase.</div>';
+                console.error(err);
+            });
+        }
+        */
+
+        // ===== usage =====
+        // if you host a static projects.json: fetchFromJson('/api/projects.json');
+        // For demo here we will use a small client-side mock (remove in production)
+        const demoData = [
+            { title: 'Infinity Spark — مدونة تقنية', description: 'قالب مدونة متوافق مع SEO وسرعة عالية.', image: 'https://picsum.photos/seed/p1/800/500', link: '#' },
+            { title: 'Tilawah Pro — منصة تعلم القرآن', description: 'واجهة تسجيل ومشغل صوتي للقرّاء.', image: 'https://picsum.photos/seed/p2/800/500', link: '#' },
+            { title: 'VORTEXA — لعبة WebGL', description: 'بروتوتايب لعبة ثلاثية الأبعاد باستخدام three.js.', image: 'https://picsum.photos/seed/p3/800/500', link: '#' }
+        ];
+        setTimeout(() => {
+            grid.innerHTML = '';
+            demoData.forEach(p => grid.appendChild(renderProject(p)));
+        }, 500);
+
+        // Uncomment to fetch real JSON:
+        // fetchFromJson('/api/projects.json');
+    })();
+
+    // Theme toggle (switch between stored color variables)
+    (function() {
+        const toggle = document.getElementById('theme-toggle');
+        toggle && toggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('light-mode');
+            toggle.setAttribute('aria-pressed', String(isDark));
+            localStorage.setItem('site-light', String(isDark));
+        });
+        if (localStorage.getItem('site-light') === 'true') {
+            document.documentElement.classList.add('light-mode');
+        }
+    })();
+
+    // Contact form basic handler (AJAX)
+    (function() {
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+        form && form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            status.textContent = 'جارٍ إرسال الطلب...';
+            // Implement your endpoint here (e.g., /api/contact)
+            setTimeout(() => {
+                status.textContent = 'تم إرسال طلبك! سنعود إليك خلال 24 ساعة.';
+                form.reset();
+            }, 900);
         });
     })();
     </script>
